@@ -19,6 +19,7 @@
     --border-radius10: 10px;
     --opacity-default: 1;
     --opacity-hover: 0.6;
+    --padding_hy: 6px;
     --padding_15: 15px;
     --padding_18: 18px;
     --padding_50: 50px;
@@ -84,14 +85,11 @@ a{
 }
 
 .header {
-    padding: var(--padding_15);
+    padding: var(--padding_hy);
     background-color: white;
     box-shadow: var(--box-shadow);
 }
 
-.content {
-    padding: var(--padding_50);
-}
 
 .footer {
     text-align: center;
@@ -116,7 +114,7 @@ a{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 2px solid red;
+    border: 2px solid gray;
     cursor: pointer
 }
 
@@ -232,3 +230,72 @@ a{
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.headingP{
+    font-size: var(--font-size-large);
+}
+
+.IfVedio{
+    width: 100%;
+    height: 100%;
+}
+
+/* mid */
+
+
+.card {
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius10);
+    /* margin-bottom: var(--padding_18); */
+}
+
+.card-header {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    padding: var(--padding_15);
+    border-top-left-radius: var(--border-radius10);
+    border-top-right-radius: var(--border-radius10);
+}
+
+.form-control {
+    border-radius: var(--border-radius10);
+    margin-bottom: 8px;
+    padding: 8px !important;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-duration);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-color);
+    color: var(--secondary-color);
+}
+
+.total-amount {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
+    text-align: right;
+    margin-top: var(--padding_hy);
+}
+.SeeBtn{
+    padding: 4px 12px;
+    background-color: #06284B;
+    color: var(--primary-color);
+    font-weight: var(--font-weight-bold);
+    /* margin-top: 16px; */
+}
+.right-panel img {
+    width: 100%;
+    border-radius: var(--border-radius10);
+}
+.form-group label{
+    font-weight: 600;
+}
+.form-control:focus{
+    border: 1px solid black;
+}
+/* .form-control */
