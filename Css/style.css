@@ -3,7 +3,9 @@
     --secondary-color: #06284B;
     --text-color: #000;
     --hover-color: #ffff;
+    --border_hover-color: #22C55E;
     --background-color: #F5F5F5;
+    --background-color_body: #F3F4F6;
     --font-family: 'Roboto', sans-serif;
     --transition-duration: 0.4s;
     --transition-duration-short: 0.2s;
@@ -21,7 +23,9 @@
     --opacity-hover: 0.6;
     --padding_hy: 6px;
     --padding_15: 15px;
+    --padding_8: 8px;
     --padding_18: 18px;
+    --padding_20: 20px;
     --padding_50: 50px;
     --card-padding-y: 26px;
     --card-padding-t: 28px;
@@ -38,6 +42,10 @@ a{
     text-decoration: none;
     color: #000;
 }
+
+.Logo{
+    height: 85px;
+}
 .offcanvas-body .nav-link {
     color: #000;
 }
@@ -46,6 +54,7 @@ a{
     color: black;
     padding: var(--padding_18);
     height: 100vh;
+    position: fixed;
 }
 /* .row{
     padding-left: 0 !important;
@@ -83,17 +92,26 @@ a{
     border-radius: var(--border-radius10);
     font-weight: var(--font-weight-semibold);
 }
-
+.offcanvas.offcanvas-start{
+    width: 65%;
+}
 .header {
     padding: var(--padding_hy);
     background-color: white;
     box-shadow: var(--box-shadow);
+    width: 100%;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    right: 0;
 }
 
-
+.outlet{
+    background-color: var(--background-color_body);
+}
 .footer {
     text-align: center;
-    padding: var(--padding_15);
+    padding: var(--padding_20);
     background-color: white;
     box-shadow: var(--box-shadow);
 }
@@ -188,10 +206,10 @@ a{
 
 .card-custom {
     border: 3px solid #ddd;
-    padding: 20px;
+    padding: 16px;
     border-radius: 5px;
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 .card-custom h5 {
@@ -228,7 +246,7 @@ a{
     padding:6px;
     border-radius: 5px;
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 .headingP{
     font-size: var(--font-size-large);
@@ -243,7 +261,7 @@ a{
 
 
 .card {
-    box-shadow: var(--box-shadow);
+    /* box-shadow: var(--box-shadow); */
     border-radius: var(--border-radius10);
     /* margin-bottom: var(--padding_18); */
 }
@@ -257,7 +275,17 @@ a{
     border-top-left-radius: var(--border-radius10);
     border-top-right-radius: var(--border-radius10);
 }
+/* .Crdhover{
+    background-image: url("../Assets/Logo-Bz2Y_Asy.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+.Crdhover:hover{
+    border-color: var(--border_hover-color);
+    transition: .5s;
 
+}
 .form-control {
     border-radius: var(--border-radius10);
     margin-bottom: 8px;
@@ -294,8 +322,61 @@ a{
 }
 .form-group label{
     font-weight: 600;
+    padding-bottom: var(--padding_8);
+}
+.form-group span{
+    font-size: 20px;
+    color: red;
 }
 .form-control:focus{
-    border: 1px solid black;
+    border: 2px solid black;
+    box-shadow: none;
+}
+.PhnNO:focus{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.form-select:focus{
+    border: 2px solid black;
+    box-shadow: none;
 }
 /* .form-control */
+.form-container {
+    background-color: var(--secondary-color);
+    padding: var(--padding_20);
+    border-radius: var(--border-radius10);
+    box-shadow: var(--box-shadow);
+    width: 300px;
+}
+.form-label {
+    color: var(--primary-color);
+    font-size: var(--font-size-default);
+}
+.form-control {
+    background-color: var(--background-color);
+    border: none;
+    border-radius: var(--border-radius10);
+    padding: var(--padding_18);
+    color: var(--text-color);
+    font-size: var(--font-size-default);
+}
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+.btn-custom {
+    background-color: var(--border_hover-color);
+    border: none;
+    border-radius: var(--border-radius10);
+    color: var(--primary-color);
+    padding: var(--padding_15);
+    width: 100%;
+    font-weight: var(--font-weight-bold);
+    transition: background-color var(--transition-duration-short) ease;
+    font-size: var(--font-size-default);
+}
+.btn-custom:hover {
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+}
