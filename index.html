@@ -131,7 +131,7 @@
                                         <p><strong>Venue:</strong> Mayfair Venue Chadwell Heath 1078-1082 High Rd Romford, RM6 4BD</p>
                                         <p><strong>Entry Fee:</strong> £10 (10+ Years to Adult), £5 (6-9 Years), Free (Under 6 Years)</p>
                                         <p><strong>Already registered?</strong><br> 
-                                            <a class="SeeBtn" onclick="toggleForm()">See Invitation</a>
+                                            <button class="SeeBtn" onclick="toggleForm()">See Invitation</button>
                                         </p>
                                     </div>
                                 </div>
@@ -141,7 +141,7 @@
                                             <label for="phoneNumber" class="form-label fw-bold text-start">Phone Number</label>
                                             <input type="number" class="form-control PhnNO rounded-0" id="phoneNumber" placeholder="Type Here">
                                         </div>
-                                        <button type="submit" class="btn btn-custom rounded-0">Submit</button>
+                                        <button  onclick="toggleForm()" class="btn btn-custom rounded-0">Submit</button>
                                     </form>
                                 </div>
                             </div>
@@ -315,10 +315,23 @@
         <!-- Your content goes here -->
     </main>
     <script>
-         function toggleForm() {
+                function toggleForm() {
             const formContainer = document.getElementById('formContainer');
             formContainer.classList.toggle('d-none');
         }
+
+        // Hide the form container when clicking outside of it
+        document.addEventListener('click', function(event) {
+            const formContainer = document.getElementById('formContainer');
+            const seeBtn = document.querySelector('.SeeBtn');
+
+            if (!formContainer.classList.contains('d-none')) {
+                // Check if the click was outside the form container and the SeeBtn
+                if (!formContainer.contains(event.target) && event.target !== seeBtn) {
+                    formContainer.classList.add('d-none');
+                }
+            }
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
